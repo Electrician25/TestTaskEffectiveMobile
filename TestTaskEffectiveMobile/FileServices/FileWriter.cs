@@ -2,7 +2,7 @@
 
 namespace TestTaskEffectiveMobile.FileServices
 {
-    public class AllFileWriter
+    public class FileWriter
     {
         private static readonly FileReader _readFile = new();
 

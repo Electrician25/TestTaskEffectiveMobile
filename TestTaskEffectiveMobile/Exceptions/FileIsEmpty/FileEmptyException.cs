@@ -2,6 +2,6 @@
 {
     public class FileEmptyException : Exception
     {
-
+        public FileEmptyException() { }
     }
 }

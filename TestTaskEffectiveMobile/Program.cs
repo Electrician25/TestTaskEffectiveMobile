@@ -14,7 +14,7 @@ namespace StartProgram
         private static void Options(FileCommand opts, string[] args)
         {
             if (opts.AddresStart == null && opts.InputLogFilePath != null && opts.OutputLogFile != null)
-                Parser.Default.ParseArguments<FileCommand>(args).WithParsed(opts => AllFileWriter.WriteAll(opts));
+                Parser.Default.ParseArguments<FileCommand>(args).WithParsed(opts => FileWriter.WriteAll(opts));
             if (opts.AddresStart != null && opts.InputLogFilePath != null && opts.OutputLogFile != null)
                 Parser.Default.ParseArguments<FileCommand>(args).WithParsed(opts => FileWriterByDate.Write(opts));
         }
