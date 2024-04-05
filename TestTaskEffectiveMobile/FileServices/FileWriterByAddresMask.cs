@@ -33,7 +33,6 @@ namespace TestTaskEffectiveMobile.FileServices
 
         private static void IsValid(FileCommand fileCommand)
         {
-            Console.WriteLine("123");
             if (fileCommand.AddresStart == null)
                 throw new AddresCommandFileException();
         }
