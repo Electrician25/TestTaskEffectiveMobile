@@ -14,6 +14,6 @@ namespace TestTaskEffectiveMobile.Commands
         public string AddresStart { get; set; }
 
         [Option('m', "address-mask", Required = false, HelpText = "specify the path to the log file")]
-        public string AddresMask { get; set; }
+        public int? AddresMask { get; set; }
     }
 }
