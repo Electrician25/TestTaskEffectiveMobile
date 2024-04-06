@@ -1,21 +1,23 @@
 ﻿using CommandLine;
 using TestTaskEffectiveMobile.Commands;
+using TestTaskEffectiveMobile.Exceptions.AddrestStartCommandIsNull;
 using TestTaskEffectiveMobile.FileServices;
 
 namespace TestTaskEffectiveMobile.FileOntions
 {
     public class FileOption
     {
-        public static void Options(FileCommand opts, string[] args)
+        public static void Options(FileCommand command, string[] args)
         {
-            if (opts.AddresStart == null && opts.InputLogFilePath != null && opts.OutputLogFile != null && opts.AddresMask == null)
+            if (command.AddresStart == null && command.InputLogFilePath != null && command.OutputLogFile != null && command.AddresMask == null)
                 Parser.Default.ParseArguments<FileCommand>(args).WithParsed(opts => FileWriter.WriteAll(opts));
 
-            if (opts.AddresStart != null && opts.InputLogFilePath != null && opts.OutputLogFile != null)
+            if (command.AddresStart != null && command.InputLogFilePath != null && command.OutputLogFile != null)
                 Parser.Default.ParseArguments<FileCommand>(args).WithParsed(opts => FileWriterByDate.Write(opts));
 
-            if (opts.AddresStart != null && opts.InputLogFilePath != null && opts.OutputLogFile != null && opts.AddresMask != null)
+            if (command.AddresStart != null && command.InputLogFilePath != null && command.OutputLogFile != null && command.AddresMask != null)
                 Parser.Default.ParseArguments<FileCommand>(args).WithParsed(opts => FileWriterByAddresMask.Write(opts));
+            else throw new AddresCommandFileNotFoundException();
         }
     }
 }

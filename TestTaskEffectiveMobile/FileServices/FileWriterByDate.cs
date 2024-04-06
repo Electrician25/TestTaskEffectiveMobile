@@ -8,7 +8,7 @@ namespace TestTaskEffectiveMobile.FileServices
 
         public static void Write(FileCommand fileCommand)
         {
-            StreamWriter streamWriter = new StreamWriter(fileCommand.OutputLogFile);
+            StreamWriter streamWriter = new(fileCommand.OutputLogFile);
             var text = _readFile.Read(fileCommand);
             var split = text.Split(' ');
             foreach (var line in split)

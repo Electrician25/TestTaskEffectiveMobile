@@ -6,7 +6,7 @@ namespace TestTaskEffectiveMobile.FileServices
     {
         public string Read(FileCommand path)
         {
-            StreamReader streamReader = new StreamReader(path.InputLogFilePath);
+            StreamReader streamReader = new(path.InputLogFilePath);
             var allText = streamReader.ReadToEnd();
             streamReader.Close();
             return allText;

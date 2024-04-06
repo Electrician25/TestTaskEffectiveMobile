@@ -9,4 +9,5 @@ HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddFileServices();
 
 Parser.Default.ParseArguments<FileCommand>(args).WithParsed(opts => FileOption.Options(opts, args));
+
 using IHost host = builder.Build();
