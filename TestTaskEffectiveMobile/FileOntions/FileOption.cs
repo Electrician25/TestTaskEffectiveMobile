@@ -1,10 +1,10 @@
 ﻿using CommandLine;
 using TestTaskEffectiveMobile.Commands;
-using TestTaskEffectiveMobile.Exceptions.AddrestStartCommandIsNull;
+using TestTaskEffectiveMobile.FileServices;
 
-namespace TestTaskEffectiveMobile.FileServices
+namespace TestTaskEffectiveMobile.FileOntions
 {
-    public class FiileOption
+    public class FileOption
     {
         public static void Options(FileCommand opts, string[] args)
         {
@@ -16,7 +16,6 @@ namespace TestTaskEffectiveMobile.FileServices
 
             if (opts.AddresStart != null && opts.InputLogFilePath != null && opts.OutputLogFile != null && opts.AddresMask != null)
                 Parser.Default.ParseArguments<FileCommand>(args).WithParsed(opts => FileWriterByAddresMask.Write(opts));
-            else throw new AddresCommandFileException();
         }
     }
 }

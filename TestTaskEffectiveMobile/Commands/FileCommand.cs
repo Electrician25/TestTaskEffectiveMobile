@@ -10,10 +10,10 @@ namespace TestTaskEffectiveMobile.Commands
         [Option('o', "output-log-file", Required = false, HelpText = "specify the path to the log file")]
         public string OutputLogFile { get; set; }
 
-        [Option('a', "address-start", Required = false, HelpText = "order by date")]
+        [Option('d', "address-start", Required = false, HelpText = "order by date")]
         public string AddresStart { get; set; }
 
-        [Option('m', "address-mask", Required = false, HelpText = "specify the path to the log file")]
+        [Option('c', "address-mask", Required = false, HelpText = "specify the path to the log file")]
         public int? AddresMask { get; set; }
     }
 }
